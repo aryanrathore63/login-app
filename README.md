@@ -21,4 +21,4 @@ Live URL: <add after deploy>
 ## Deploy
 - DB: Supabase/Neon, run `db/schema.sql`.
 - API: Render/Railway (root `backend`, build `npm install && npm run build`, start `npm start`). Env: `DATABASE_URL`, `JWT_SECRET`, `CORS_ORIGIN` (frontend URL), `DB_SSL`.
-- Frontend: Vercel (root `frontend`), env `VITE_API_URL` = API URL.
+- Frontend: Vercel (root `frontend`). `frontend/vercel.json` forwards `/api/*` requests to the deployed API, so leave `VITE_API_URL` unset in Vercel. Update that rewrite destination if the API hostname changes.
